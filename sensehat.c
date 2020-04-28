@@ -73,7 +73,7 @@ unsigned char ucTemp[32];
 char filename[32];
  
 	sprintf(filename, "/dev/i2c-%d", iChannel);
-	if ((file_led = open(filename, O_RDWR)) < 0)
+	/*if ((file_led = open(filename, O_RDWR)) < 0)
 	{
 		fprintf(stderr, "Failed to open the i2c bus; need to run as sudo?\n");
 		return -1;
@@ -83,7 +83,7 @@ char filename[32];
 	{
 		fprintf(stderr, "Failed to acquire bus for LED matrix\n");
 		goto badexit;
-	}
+	}*/
 
 	file_acc = open(filename, O_RDWR);
 	if (ioctl(file_acc, I2C_SLAVE, 0x6a) < 0)
